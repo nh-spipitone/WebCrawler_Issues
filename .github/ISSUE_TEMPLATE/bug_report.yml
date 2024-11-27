@@ -17,7 +17,6 @@ body:
         - Help Wanted
         - Question
         - Wontfix
-      required: true
   - type: textarea
     id: bug_description
     attributes:
