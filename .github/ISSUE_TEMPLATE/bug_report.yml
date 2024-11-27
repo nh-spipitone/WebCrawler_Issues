@@ -1,0 +1,88 @@
+name: Bug Report
+description: Use this template to report a bug.
+title: "[Bug]: "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report a bug!
+  - type: dropdown
+    id: issue_type
+    attributes:
+      label: Issue Type
+      description: Select the type of issue you are reporting.
+      options:
+        - Bug
+        - Help Wanted
+        - Question
+        - Wontfix
+      required: true
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: Describe the Bug
+      description: A clear and concise description of the problem.
+      placeholder: Describe the problem here...
+      required: true
+  - type: textarea
+    id: reproduction_steps
+    attributes:
+      label: Steps to Reproduce
+      description: List the steps to reproduce the behavior:
+      placeholder: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+      required: true
+  - type: input
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: Describe what you expected to happen.
+      placeholder: Describe the expected behavior here...
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Paste any relevant logs here. You can also attach log files by dragging and dropping them into the comment box after submitting this issue.
+      render: shell
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem. You can attach images by dragging and dropping them into the comment box after submitting this issue.
+  - type: checkboxes
+    id: environment
+    attributes:
+      label: Environment
+      description: Select the relevant information about your environment:
+      options:
+        - label: Desktop
+        - label: Smartphone
+  - type: input
+    id: operating_system
+    attributes:
+      label: Operating System
+      description: Specify your operating system (e.g., Windows 10, iOS 14).
+      placeholder: Enter the operating system here...
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      description: Specify the browser used (e.g., Chrome, Safari).
+      placeholder: Enter the browser here...
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Specify the version of the browser or application.
+      placeholder: Enter the version here...
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here.
+      placeholder: Enter additional details here...
