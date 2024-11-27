@@ -1,0 +1,24 @@
+name: Apply Label Based on Issue Type
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  apply_label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract Issue Type
+        id: extract_type
+        run: |
+          echo "Extracting issue type from the issue body..."
+          issue_type=$(echo "${{ github.event.issue.body }}" | grep -A 1 'Issue Type' | tail -n 1 | xargs)
+          echo "Issue type selected: $issue_type"
+          echo "issue_type=$issue_type" >> $GITHUB_OUTPUT
+
+      - name: Apply Label
+        if: ${{ steps.extract_type.outputs.issue_type != '' }}
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: ${{ steps.extract_type.outputs.issue_type }}
